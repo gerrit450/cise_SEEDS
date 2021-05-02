@@ -33,8 +33,7 @@ jobs:
     
     - name: lint
       run: npm run lint
-      
-    - name: deploying
+
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
