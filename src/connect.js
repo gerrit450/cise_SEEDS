@@ -5,13 +5,11 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 
-
-
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
 async function run() {
 
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'ejs'); // setting the view engine to use embedded javascript language to display
 
   try
   {
@@ -25,7 +23,7 @@ async function run() {
 
   const collection = client.db('Merndata').collection('mern');
 
-  app.post('/formdata', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
+  app.post('/submit/article', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
   {
     res.send(req.body.title);
     console.log("parsed!"); // saving input
@@ -39,15 +37,21 @@ async function run() {
        const p = collection.insertOne(personDocument); //insert into database an object that contains information
     })
 
-  app.get('/readdata', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
+  app.post('/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
-      db.collection('mern').find().toArray() // then go to collection
+    var info = req.body.search;
+      db.collection('mern').find({}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
         .then(data => {
           console.log(data)
-          res.render('readBook.ejs', { output: data })
+          res.render('display.ejs', {output: data })
         })
         .catch(error => console.error(error))
         
+  })
+  
+  app.get('/test', (req, res) => {
+
+    console.log(req.body.search);
   })
 
   app.put('/updatedata', (req, res) => 

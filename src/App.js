@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import React from 'react';
-import './App.css';
+import './App.css'; //importing css file
 import {Component} from 'react';
-import {Button} from 'react-bootstrap'; 
-import history from './history';
-
+import pic from  './assets/seeds.png';
 
 class App extends Component {
 
@@ -12,15 +10,24 @@ class App extends Component {
   {
   return (
     <div className="App">
-      <form>
-          <Button onClick={() => history.push('./createBook')}>Insert new book</Button> 
-          </form>
-          <Button onClick={() => history.push('./readBook')}>Read existing books</Button>
-          <Button onClick={() => history.push('./updateBook')}>Update an existing book</Button>
-          <Button onClick={() => history.push('./deleteBook')}>delete a book</Button>
+      <text style={{fontWeight:'bold',fontSize:32}}>Project SEEDS</text>
+      <img src={pic} style={{resize: 'initial', width: 100}} />
+    <form action="http://localhost:4001/results" method="post">
+      <br/><br/>
+        <label htmlFor="header-search">
+            <span className="visually-hidden">Search for SE practices</span>
+            <br/>
+        </label>
+        <input
+            type="text"
+            placeholder="Search blog posts"
+            name="search" 
+        />
+        <button type="submit">Search</button>
+    </form>
     </div>
   );
   }
-}
 
+}
 export default App;
