@@ -3,10 +3,10 @@ name: developSEEDS
 on:
   pull_request:
     branches:
-      - developed
+      - developer
 
 jobs:
-
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -33,14 +33,10 @@ jobs:
     
     - name: lint
       run: npm run lint
-      
-    - name: building
+
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "developedseed" #Must be unique in Heroku
           heroku_email: "gerrit2209@gmail.com"
-
-   
-          
