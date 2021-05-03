@@ -9,8 +9,6 @@ class App extends Component {
 
   render()
   {
-  var conn = new connection(); //anonymous object to connect the server
-  this.state.txt = conn.runServer(); // returns a string based on connection status
   return (
     <div className="App">
       <header className="App-header">
