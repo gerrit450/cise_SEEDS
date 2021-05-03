@@ -1,0 +1,22 @@
+        <div>
+            <body>
+                <% for(var i = 0; i < output.length; i++) {%>
+                       <div>
+                      <text>Title: </text><span style="font-weight: bold;"><%=output[i].title %></span>
+                      </div>
+
+                      <div>
+                      <text>published: </text><span style="font-weight: bold;"><%= output[i].Authors.published%></span>
+                      </div>
+
+                      <div>
+                      <text>First name: </text><span style="font-weight: bold;"><%= output[i].Authors.FirstName%></span>
+                      </div> 
+
+                      <div>
+                      <text>last name: </text><span style="font-weight: bold;"><%= output[i].Authors.LastName%></span>
+                      </div>
+
+                  <% } %>
+            </body>
+        </div>
