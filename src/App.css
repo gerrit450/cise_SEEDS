@@ -3,13 +3,13 @@
 }
 
 .background-red {
-  background-color: grey;
+  background-color: rgb(109, 21, 21);
 }
 
 body {  
   align-self: start;
-  background-color: #008080;  
-  color: yellow;  
+  background-color: #0a1d52f3;  
+  color: rgb(255, 30, 30);  
   padding: 40px;  
   font-family: Arial;  
   text-align: left;  
