@@ -17,7 +17,5 @@ class connection
         client.close();
     }
 
-    return 
+               }
 }
-}
-export default connection;
