@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {Component} from 'react';
-import connection from './connect.js';
+import connection from '../connect.js';
 
 class App extends Component {
 
