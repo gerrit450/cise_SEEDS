@@ -5,10 +5,7 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 
-let title;
-let published;
-let firstname;
-let lastname;
+
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
