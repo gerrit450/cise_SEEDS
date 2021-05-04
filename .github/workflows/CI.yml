@@ -28,14 +28,14 @@ jobs:
     - name: Run the tests
       run: npm test
 
-    - name: server
-      run: npm run server
-
     - name: Build
       run: npm run build
     
     - name: lint
       run: npm run lint
+
+    - name: server
+      run: npm run server
 
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
