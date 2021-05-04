@@ -17,7 +17,7 @@ jobs:
       run: npm install --save-dev nodemon
 
     - name: server
-      run: npm run server
+      run: nodemon connect.js
       
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
