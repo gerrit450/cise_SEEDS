@@ -16,8 +16,6 @@ class submitted extends Component {
   return (
     <div className="App" style={{backgroundColor: 'lightblue', height: 760}}>
         <p style={{marginRight: 280, marginTop: 655}}>
-          ID: 169 593 02
-          Name: Gerrit van zyl
         </p>
     </div>
   );
