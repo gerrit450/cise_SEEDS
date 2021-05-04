@@ -14,11 +14,8 @@ jobs:
       run: npm install
 
     - name: Install nodemon
-      run: npm install --save-dev nodemon
+      run: npm install -g nodemon
       
-    - name: cd src
-      run: cd src
-
     - name: server
       run: nodemon connect.js
       
