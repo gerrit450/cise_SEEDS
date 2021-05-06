@@ -1,0 +1,49 @@
+.background-main {
+  background-image: url("../images/Pattern.png");
+  background-size: repeat;
+  margin: 20px;
+}
+
+.container{ /*Create a "container" around box class.*/
+  width: 800px;
+  margin: auto;
+  border: 4mm ridge rgba(65, 57, 57, 0.6);
+  background-color: rgb(255, 255, 255);
+  color:black;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  text-align: left;
+}
+
+.container h1{
+  color: red;
+}
+
+.headerImage{
+  margin: 0;
+}
+.headerImage h1{
+  float: left;
+  padding-top: 0px;
+  text-decoration:underline blue;
+}
+.image img{
+  overflow: auto;
+  padding-left: 50px;
+  padding-top: 0px;
+  max-width: 20%;
+  height: auto;
+}
+
+.container [type="submit" i] {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding:5px 10px;
+  border:none;
+}
+
+.container [type="submit" i]:hover {
+  background-color: red;
+  color:white;
+}
