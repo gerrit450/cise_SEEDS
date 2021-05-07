@@ -47,3 +47,24 @@
   background-color: red;
   color:white;
 }
+
+.NewArticle {
+    width: 800px;
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.NewArticle [type="submit" i] {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding:15px 20px;
+  border:none;
+  font-size: large;
+}
+
+.NewArticle [type="submit" i]:hover {
+  background-color: red;
+  color:white;
+}
