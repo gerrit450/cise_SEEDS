@@ -34,6 +34,9 @@ jobs:
     #- name: lint
       #run: npm run lint
 
+    #- name: server
+      #run: npm run server
+
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
@@ -41,5 +44,3 @@ jobs:
           heroku_app_name: "developseed" #Must be unique in Heroku
           heroku_email: "gerrit2209@gmail.com"
 
-    - name: server
-      run: npm run server
