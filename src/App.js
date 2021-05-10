@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.css'; //importing css file
 import {Component} from 'react';
@@ -11,7 +10,7 @@ class App extends Component {
   return (
     <div className="App">
       <text style={{fontWeight:'bold',fontSize:32}}>Project SEEDS</text>
-      <img src={pic} style={{resize: 'initial', width: 100}} />
+      <img src={pic} style={{resize: 'initial', width: 100}} alt={''} />
     <form action="http://localhost:4001/results" method="post">
       <br/><br/>
         <label htmlFor="header-search">
