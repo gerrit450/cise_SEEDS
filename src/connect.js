@@ -13,12 +13,7 @@ async function run() {
 
   try
   {
-    client.connect(err=>
-    {
-      client.close();
-    }
-
-    );
+    await client.connect();
     console.log('connected!');
     
   }
@@ -26,9 +21,15 @@ async function run() {
   {
         console.log(err);
   }
+  finally
+  {
+    
+  
 
   const collection = client.db('Merndata').collection('mern');
 
+  
+/*
   app.post('/submit/article', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
   {
     res.send(req.body.title);
@@ -70,12 +71,15 @@ async function run() {
     .then(result => {console.log(result),res.send(result)})
     .catch(error => console.error(error))
   })
+  */
 
 app.listen(4001, function() //starting port for server
 {
   console.log('connected to localhost 4001');
+  
 })
+await client.close();
+  }
 
 }
-
-run(); //running the function
+run().catch(console.dir);; //running the function
