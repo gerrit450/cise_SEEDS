@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "cd src & nodemon connect.js",
+    "server": "nodemon src/connect.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
