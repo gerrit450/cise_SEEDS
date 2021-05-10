@@ -31,8 +31,8 @@ jobs:
     - name: Build
       run: npm run build
     
-    - name: lint
-      run: npm run lint
+    #- name: lint
+      #run: npm run lint
 
     - name: server
       run: npm run server
