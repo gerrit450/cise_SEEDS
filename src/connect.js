@@ -13,8 +13,14 @@ async function run() {
 
   try
   {
-    client.connect();
+    client.connect(err=>
+    {
+      client.close();
+    }
+
+    );
     console.log('connected!');
+    
   }
   catch (err) 
   {
