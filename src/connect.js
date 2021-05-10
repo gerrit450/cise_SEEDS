@@ -20,11 +20,8 @@ async function run() {
   catch (err) 
   {
         console.log(err);
-  }
-  finally
-  {
-    
-  
+  } 
+
 
   const collection = client.db('Merndata').collection('mern');
 
@@ -75,8 +72,6 @@ app.listen(4001, function() //starting port for server
   console.log('connected to localhost 4001');
   
 })
-await client.close();
-  }
 
 }
 run().catch(console.dir);; //running the function
