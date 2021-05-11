@@ -1,1 +1,1 @@
-worker: npm run server
+web: cd src && nodemon connect.js
