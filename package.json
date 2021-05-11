@@ -23,8 +23,8 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "cd src && nodemon connect.js",
-    "app": "react-scripts start",
+    "start": "react-scripts start",
+    "server": "cd src && nodemon connect.js",
     "eslint": "eslint src",
     "build": "react-scripts build",
     "test": "react-scripts test",
