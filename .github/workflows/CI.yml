@@ -22,20 +22,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
+    - name: Install dependencies #install the dependecies
       run: npm install
 
-    #- name: Run the tests
-      #run: npm test
+    #- name: Run the tests #run the test script
+     # run: npm test
 
-    - name: Build
-      run: npm run build
-    
-    #- name: lint
-      #run: npm run lint
+    #- name: lint #run eslint to check code standard
+     # run: npm run lint
 
-    #- name: server
-      #run: npm run server
+    #- name: Build # build the application
+      #run: npm run build
 
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
