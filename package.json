@@ -26,7 +26,6 @@
     "start": "react-scripts start",
     "server": "cd src && nodemon connect.js",
     "eslint": "eslint src",
-    "heroku-postbuild": "npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
