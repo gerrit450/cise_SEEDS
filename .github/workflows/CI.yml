@@ -31,9 +31,9 @@ jobs:
     #- name: lint #run eslint to check code standard
      # run: npm run lint
 
-    - name: Build # build the application
-      run: npm run build
-      
+    #- name: Build # build the application
+      #run: npm run build
+
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
