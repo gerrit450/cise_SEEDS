@@ -1,39 +1,31 @@
 
-        <div>
+        <div style="background-color: lightseagreen; height: 800; ">
             <body>
+
+                <text style="font-weight: bold; font-size: 45; align-self: center;">Results </text>
+                <table aria-label="simple table" border="1.5">
+                <tr>
+                    <th col><text>Title </text></th>
+                    <th><text>author </text></th>
+                    <th><text>published </text></th>
+                    <th><text>year </text></th>
+                </tr>
+
+                
                 <% for(var i = 0; i < output.length; i++) {%>
-                       
-                    <table>
-
-                    <th>
-                    <text>Title</text>
-                     </th>
-
+                   
                     <tr>
-                    <span style="font-weight: bold;"><%=output[i].title %></span>
+                     <th> <span style="font-weight: bold;"><%= output[i].title %></span> <br><br> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].author%></span> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].published%></span> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].year%></span> </th>
                     </tr>
-
-                    <th>
-                    <text>author: </text>
-                    </th>
-                    <span style="font-weight: bold;"><%= output[i].author%></span>
                     
-
-                    <th>
-                    <text>published: </text>
-                    </th>
-                    <span style="font-weight: bold;"><%= output[i].published%></span>
-                    
-
-                    <th>
-                    <text>year: </text>
-                    </th>
-                    <span style="font-weight: bold;"><%= output[i].year%></span>
-                    
+                    <% } %> 
                     
                     </table>
                       <br><br>
 
-                  <% } %> 
+                  
             </body>
         </div>
