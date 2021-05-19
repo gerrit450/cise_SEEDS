@@ -27,7 +27,6 @@ export default class createForm extends Component
     <button type="submit" class="article">Search</button>
   </form>
   <div class="NewArticle">
-    <button type="submit" >Add new articles</button>
   </div>
 </body>
 </div>
