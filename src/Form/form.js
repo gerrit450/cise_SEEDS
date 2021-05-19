@@ -1,7 +1,8 @@
 import React from 'react';
 import './style/style.css'; //importing css file
 import image1 from './images/SeedLogo.png'
-import { Component } from 'react';
+import history from './../history.js';
+
 
 export default class createForm extends Component
 {
@@ -27,7 +28,7 @@ export default class createForm extends Component
     <button type="submit" class="article">Search</button>
   </form>
   <div class="NewArticle">
-    <button type="submit" >Add new articles</button>
+    <button type="submit" onClick={() =>history.push('/addArticle')} >Add new articles</button>
   </div>
 </body>
 </div>
