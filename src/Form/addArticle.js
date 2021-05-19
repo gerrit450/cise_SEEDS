@@ -5,41 +5,46 @@ import { Component } from 'react';
 export default class addArticle extends React.Component {
     render() {
       return (
-      <div className="addArticle">
-       <h> Please submit article </h> 
+      <div className="addArticleContainer">
+        <body className="background-main">
+        <div className = "addArticleHeader">
+       <h1> Article submissison</h1> 
+       </div>
+       
        <form action ="http://localhost:4001/articles" method="post">
-         <br/><text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the author's first name</text>
-      <br/>
-      <input type="text" placeholder="Author's first name" name="firstname"/> <br/>
-      <br/>
+        <div className= "input" >
+         <p> <text>Please enter the author's first name</text><br/>
+          <input type="text" placeholder="Author's first name" name="firstname"/>   </p>
+      
+      <p><text>Please enter the author's last name</text><br/>
+          <input type="text" placeholder="Author's last name" name="lastname"/> </p>
+      
 
-      <br/><text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the author's last name</text>
-      <br/>
-      <input type="text" placeholder="Author's last name" name="lastname"/> <br/>
-      <br/>
+      <p><text>Please enter the title of the article</text><br/>
+          <input type="text" placeholder="The title of the article" name="title"/></p>
+      
 
-      <text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the title of the article</text><br/>
-      <input type="text" placeholder="title" name="title"/><br/>
-      <br/>
+      <p><text>Please enter the year of publication</text><br/>
+          <input type="text" placeholder="2010" name="year"/></p>
+      
+      <p><text>Please enter the source of the article</text><br/>
+          <input type="text" placeholder="journal" name="source"/></p>
 
-      <text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the year of publication</text><br/>
-      <input type="text" placeholder="year of publication" name="year"/><br/>
-      <br/>
+      <p><text>Please enter the SE practice</text><br/>
+        <input type="text" placeholder="TDD" name="practice"/></p>
 
-      <text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the source</text><br/>
-      <input type="text" placeholder="source" name="source"/><br/>
+     <p><text>Please enter the claims</text><br/>
+      <input type="text" placeholder="improves code quality" name="claims"/></p>
 
-      <text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the SE practice</text><br/>
-      <input type="text" placeholder="practice" name="practice"/><br/>
-
-      <text style = {{color: 'blue', fontStyle: 'italic', fontSize: '45'}}>Please enter the claims</text><br/>
-      <input type="text" placeholder="claims" name="claims"/><br/>
-
+      </div>
 
       <button type="submit">Submit</button>
 </form>
-      </div>
 
+</body>
+
+      </div>
+    
       );
     }
   }
