@@ -4,12 +4,18 @@ import image1 from './images/SeedLogo.png'
 import { Component } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Select from 'react-select';
 
 export default class createForm extends Component
 {
   create()
   {
-      
+    const options = [
+      { value: 'blues', label: 'Blues' },
+      { value: 'rock', label: 'Rock' },
+      { value: 'jazz', label: 'Jazz' },
+      { value: 'orchestra', label: 'Orchestra' } 
+    ];
   return (
     
 <div>
@@ -58,6 +64,7 @@ export default class createForm extends Component
   <div class="NewArticle">
     <button type="submit" >Add new articles</button>
   </div>
+  <Select options = {options} />
 </body>
 
 </div>
