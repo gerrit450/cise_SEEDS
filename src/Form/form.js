@@ -24,7 +24,7 @@ export default class createForm extends Component
   <title>Project SEEDS</title>
   </head>
 <body class="background-main">
-  <div class="container"/>
+  <div class="container">
     <div class="headerImage"/>
       <div class="image" style={{overflow: 'auto'}}/>
         <h1>Project SEEDS</h1>
@@ -64,7 +64,10 @@ export default class createForm extends Component
   <div class="NewArticle">
     <button type="submit" >Add new articles</button>
   </div>
-  <Select options = {options} />
+  </div>
+  <Select className="mt-4 col-md-6 col-offset-4"
+    options = { options }
+  />
 </body>
 
 </div>
