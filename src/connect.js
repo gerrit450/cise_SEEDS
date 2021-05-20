@@ -42,6 +42,7 @@ async function run() {
   app.post('/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
     var info = req.body.search;
+    req.body.
       db.collection('mern').find({}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
         .then(data => {
           console.log(data)
