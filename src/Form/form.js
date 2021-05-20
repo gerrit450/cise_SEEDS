@@ -5,16 +5,25 @@ import { Component } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
+import { title } from 'process';
 
 export default class createForm extends Component
 {
   create()
   {
-    const options = [
-      { value: 'blues', label: 'Blues' },
-      { value: 'rock', label: 'Rock' },
-      { value: 'jazz', label: 'Jazz' },
-      { value: 'orchestra', label: 'Orchestra' } 
+    const optionsSE = [
+      { value: 'Improve code quality', label: 'Improve code quality' },
+      { value: 'Improve product quality', label: 'Improve product quality' },
+      { value: 'Improve team performance', label: 'Improve team performance' },
+    ];
+    const optionsClaim = [
+      { value: 'TDD', label: 'TDD' },
+    ];
+    const nameSE = [
+      {label: 'Please select SE practice' }
+    ];
+    const nameOfClaim = [
+      {label: 'Please choose a claim' }
     ];
   return (
     
@@ -64,7 +73,8 @@ export default class createForm extends Component
   <div class="NewArticle">
     <button type="submit" >Add new articles</button>
   </div>
-  <Select options = {options} />
+  <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameSE} options = {optionsSE}/>
+  <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameOfClaim} options = {optionsClaim}/>
 </body>
 
 </div>
