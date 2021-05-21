@@ -1,1 +1,1 @@
-web: npm run server $PORT
+web: nodemon src/connect.js
