@@ -6,6 +6,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
 import { title } from 'process';
+const PORT = process.env.PORT || 4001;
 
 export default class createForm extends Component
 {
@@ -42,7 +43,7 @@ export default class createForm extends Component
     Search for Software Engineering Articles
     <br/>
     
-    <form action="http://localhost:4001/results" method="post">
+    <form action={PORT,'/results'} method="post">
     <input type="text" name="search" placeholder="Search Articles"/> 
     <button type="submit" class="article">Search</button>
   </form>

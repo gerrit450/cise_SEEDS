@@ -5,7 +5,7 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 const path = require('path');
-const PORT = process.env.PORT || 4001;
+const PORT = 4001;
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
@@ -44,7 +44,7 @@ async function run() {
        const p = collection.insertOne(personDocument); //insert into database an object that contains information
     })
 
-  app.post('/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
+  app.post( '/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
     var info = req.body.search;
       db.collection('mern').find({}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
