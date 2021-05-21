@@ -2,6 +2,7 @@
   "name": "cise_mern",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4001",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "@testing-library/jest-dom": "^5.11.10",
@@ -28,6 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "cd src && nodemon connect.js",
+    "project": "concurrently --kill-others-on-fail \"npm run start\" \"npm run server\"",
     "eslint": "eslint src",
     "heroku-postbuild": "npm start",
     "build": "react-scripts build",
@@ -53,7 +55,9 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.1.0",
     "eslint": "^7.26.0",
+    "json-server": "^0.16.3",
     "nodemon": "^2.0.7"
   }
 }
