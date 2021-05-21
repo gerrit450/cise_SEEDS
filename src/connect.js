@@ -4,8 +4,12 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 const express = require('express'); //load express dependencies. must be installed npm install express --save
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, './App.js')))
 
 async function run() {
 
@@ -42,7 +46,6 @@ async function run() {
   app.post('/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
     var info = req.body.search;
-    req.body.
       db.collection('mern').find({}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
         .then(data => {
           console.log(data)
@@ -67,6 +70,11 @@ async function run() {
     .then(result => {console.log(result),res.send(result)})
     .catch(error => console.error(error))
   })
+
+  // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/App.js'))
+})
 
 app.listen(4001, function() //starting port for server
 {
