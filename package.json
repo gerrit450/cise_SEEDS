@@ -30,7 +30,7 @@
     "server": "cd src && nodemon connect.js",
     "project": "concurrently --kill-others-on-fail \"npm run start\" \"npm run server\"",
     "eslint": "eslint src",
-    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "npm install && npm run build && npm run project",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
