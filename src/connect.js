@@ -5,6 +5,7 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 const path = require('path');
+const PORT = process.env.PORT || 4001;
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
@@ -76,9 +77,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/App.js'))
 })
 
-app.listen(4001, function() //starting port for server
+app.listen(PORT, function() //starting port for server
 {
-  console.log('connected to localhost 4001');
+  console.log('connected to',PORT);
   
 })
 
