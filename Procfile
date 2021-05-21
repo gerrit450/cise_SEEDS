@@ -1,1 +1,1 @@
-server: npm run project
+worker: npm run project
