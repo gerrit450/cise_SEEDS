@@ -22,24 +22,22 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
+    - name: Install dependencies #install the dependecies
       run: npm install
 
-    - name: Run the tests
-      run: npm test
+    #- name: Run the tests #run the test script
+     # run: npm test
 
-    - name: Build
+    #- name: lint #run eslint to check code standard
+     # run: npm run lint
+
+    - name: Build # build the application
       run: npm run build
-    
-    - name: lint
-      run: npm run lint
-
-    - name: server
-      run: npm run server
 
     - uses: actions/checkout@v2
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "developedseed" #Must be unique in Heroku
+          heroku_app_name: "developseed" #Must be unique in Heroku
           heroku_email: "gerrit2209@gmail.com"
+

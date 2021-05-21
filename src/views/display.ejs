@@ -1,23 +1,31 @@
-        <div>
+
+        <div style="background-color: lightseagreen; height: 800; ">
             <body>
+
+                <text style="font-weight: bold; font-size: 45; align-self: center;">Results </text>
+                <table aria-label="simple table" border="1.5">
+                <tr>
+                    <th><text>Title </text></th>
+                    <th><text>author </text></th>
+                    <th><text>published </text></th>
+                    <th><text>year </text></th>
+                </tr>
+
+                
                 <% for(var i = 0; i < output.length; i++) {%>
-                       <div>
-                      <text>Title: </text><span style="font-weight: bold;"><%=output[i].title %></span>
-                      </div>
-
-                      <div>
-                      <text>author: </text><span style="font-weight: bold;"><%= output[i].author%></span>
-                      </div>
-
-                      <div>
-                      <text>published: </text><span style="font-weight: bold;"><%= output[i].published%></span>
-                      </div>
-
-                      <div>
-                      <text>year: </text><span style="font-weight: bold;"><%= output[i].year%></span>
-                      </div>
+                   
+                    <tr>
+                     <th> <span style="font-weight: bold;"><%= output[i].title %></span> <br><br> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].author%></span> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].published%></span> </th>
+                     <th> <span style="font-weight: bold;"><%= output[i].year%></span> </th>
+                    </tr>
+                    
+                    <% } %> 
+                    
+                    </table>
                       <br><br>
 
-                  <% } %> 
+                  
             </body>
         </div>

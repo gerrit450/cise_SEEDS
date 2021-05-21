@@ -4,8 +4,12 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 const express = require('express'); //load express dependencies. must be installed npm install express --save
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, './App.js')))
 
 async function run() {
 
@@ -13,13 +17,15 @@ async function run() {
 
   try
   {
-    client.connect();
+    await client.connect();
     console.log('connected!');
+    
   }
   catch (err) 
   {
         console.log(err);
-  }
+  } 
+
 
   const collection = client.db('Merndata').collection('mern');
 
@@ -65,11 +71,16 @@ async function run() {
     .catch(error => console.error(error))
   })
 
+  // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/App.js'))
+})
+
 app.listen(4001, function() //starting port for server
 {
   console.log('connected to localhost 4001');
+  
 })
 
 }
-
-run(); //running the function
+run().catch(console.dir);; //running the function
