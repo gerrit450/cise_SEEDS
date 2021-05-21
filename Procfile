@@ -1,1 +1,1 @@
-server: npm run server 
+server: npm run project
