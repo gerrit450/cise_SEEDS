@@ -1,1 +1,1 @@
-worker: npm run project
+web: npm run project
