@@ -5,7 +5,7 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 const path = require('path');
-const PORT = 4001;
+const PORT = process.env.PORT|| 4001;
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
@@ -73,8 +73,11 @@ async function run() {
   })
 
   // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+
 app.get('/', (req, res) => {
-  res.render('Test.ejs');
+  app.use(express.static('createForm'))
+  res.sendFile(path.join(__dirname + '/createForm/form.html'))
+  
 })
 
 
