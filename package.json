@@ -26,10 +26,9 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "cd src && nodemon connect.js",
+    "start": "npm run server",
     "server": "cd src && nodemon connect.js",
     "project": "concurrently --kill-others-on-fail \"npm run start\" \"npm run server\"",
-    "heroku-postbuild": "npm start",
     "eslint": "eslint src",
     "build": "react-scripts build",
     "test": "react-scripts test",
