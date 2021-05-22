@@ -72,10 +72,12 @@ async function run() {
     .catch(error => console.error(error))
   })
 
+  app.use(express.static('testing'))
   // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/App.js'))
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/testing/form.html'))
 })
+
 
 app.listen(PORT, function() //starting port for server
 {

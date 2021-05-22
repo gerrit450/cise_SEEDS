@@ -26,11 +26,11 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd src && nodemon connect.js",
     "server": "cd src && nodemon connect.js",
     "project": "concurrently --kill-others-on-fail \"npm run start\" \"npm run server\"",
     "eslint": "eslint src",
-    "build": "react-scripts build && npm install -g serve",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
