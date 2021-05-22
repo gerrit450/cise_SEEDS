@@ -13,28 +13,28 @@ export default class addArticle extends React.Component {
        
        <form action ="http://localhost:4001/articles" method="post">
         <div className= "input" >
-         <p> <text>Please enter the author's first name</text><br/>
-          <input type="text" placeholder="Author's first name" name="firstname"/>   </p>
-      
-      <p><text>Please enter the author's last name</text><br/>
-          <input type="text" placeholder="Author's last name" name="lastname"/> </p>
+         <p> <text>Please enter author's first name</text><br/>
+          <input type="text" placeholder="Author's first name"  style= {{width: 260, height: 20}} name="firstname"/> 
+         </p>
+      <p><text>Please enter author's last name</text><br/>
+          <input type="text" placeholder="Author's last name" style= {{width: 260, height: 20}} name="lastname"/> </p>
       
 
       <p><text>Please enter the title of the article</text><br/>
-          <input type="text" placeholder="The title of the article" name="title"/></p>
+          <input type="text" placeholder="The title of the article" style= {{width: 260, height: 20}} name="title"/></p>
       
 
       <p><text>Please enter the year of publication</text><br/>
-          <input type="text" placeholder="2010" name="year"/></p>
+          <input type="text" placeholder="2010" style= {{width: 260, height: 20}} name="year"/></p>
       
       <p><text>Please enter the source of the article</text><br/>
-          <input type="text" placeholder="journal" name="source"/></p>
+          <input type="text" placeholder="journal" style= {{width: 260, height: 20}} name="source"/></p>
 
       <p><text>Please enter the SE practice</text><br/>
-        <input type="text" placeholder="TDD" name="practice"/></p>
+        <input type="text" placeholder="TDD"  style= {{width: 260, height: 20}}name="practice"/></p>
 
      <p><text>Please enter the claims</text><br/>
-      <input type="text" placeholder="improves code quality" name="claims"/></p>
+      <input type="text" placeholder="improves code quality" style= {{width: 260, height: 20}} name="claims"/></p>
 
       </div>
 
