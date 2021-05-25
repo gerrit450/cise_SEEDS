@@ -16,6 +16,35 @@
   text-align: left;
 }
 
+#containerResult{ /*Create a "container" around box class.*/
+  width: 1200px;
+  height: 1000px;
+  margin: auto;
+  border: 4mm ridge rgba(65, 57, 57, 0.6);
+  background-color: rgb(255, 255, 255);
+  color:black;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-bottom: 400px;
+  font-size: 17px;
+  text-align: left;
+}
+#containerResult a{
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  border: 2mm ridge lightgrey;
+}
+#containerResult a:hover{
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgb(255, 0, 0);
+  padding: 10px;
+  border: 2mm ridge lightgrey;
+}
 .container h1{
   color: red;
 }
@@ -67,4 +96,47 @@
 .NewArticle [type="submit" i]:hover {
   background-color: red;
   color:white;
+}
+
+
+/* Dropdown button Style below */
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: 2mm rgb(102, 100, 100) ridge;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: 2mm rgb(172, 173, 172) ridge;
+}
+
+.dropdown-content a:hover {background-color: #e4e2e2}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ff0000;
 }
