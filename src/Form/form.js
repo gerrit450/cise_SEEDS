@@ -25,6 +25,7 @@ export default class createForm extends Component
     const nameOfClaim = [
       {label: 'Please choose a claim' }
     ];
+    
   return (
     
 <div>
@@ -75,8 +76,10 @@ export default class createForm extends Component
   </div>
   <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameSE} options = {optionsSE}/>
   <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameOfClaim} options = {optionsClaim}/>
-</body>
 
+
+</div>
+</body>
 </div>
   );
   }
