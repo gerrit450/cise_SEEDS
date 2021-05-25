@@ -16,7 +16,7 @@ export default class createForm extends Component
   <title>Project SEEDS</title>
   </head>
 <body class="background-main">
-  <div class="container"/>
+  <div class="container">
     <div class="headerImage"/>
       <div class="image" style={{overflow: 'auto'}}/>
         <h1>Project SEEDS</h1>
@@ -28,6 +28,7 @@ export default class createForm extends Component
     <input type="text" name="search" placeholder="Search Articles"/> 
     <button type="submit" class="article">Search</button>
   </form>
+  </div>
   <div class="NewArticle">
     <button type="submit" onClick={() =>history.push('/addArticle')} >Add new articles</button>
   </div>
