@@ -26,10 +26,11 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "server": "cd src && nodemon connect.js",
-    "project": "concurrently --kill-others-on-fail \"npm run start\" \"npm run server\"",
+    "start": "npm run server",
+    "server": "cd src && node connect.js",
+    "project": "concurrently --kill-others-on-fail \"react-scripts start\" \"npm run server\"",
     "eslint": "eslint src",
+    "heroku-postbuild": "npm install && npm run build && npm install concurrently --save",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

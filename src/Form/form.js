@@ -42,7 +42,7 @@ export default class createForm extends Component
     Search for Software Engineering Articles
     <br/>
     
-    <form action="http://localhost:4001/results" method="post">
+    <form action={'http://localhost:4001/results'} method="post">
     <input type="text" name="search" placeholder="Search Articles"/> 
     <button type="submit" class="article">Search</button>
   </form>
