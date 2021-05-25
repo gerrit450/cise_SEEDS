@@ -5,6 +5,7 @@ const express = require('express'); //load express dependencies. must be install
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 const path = require('path');
+const PORT = process.env.PORT|| 4001;
 
 app.use(bodyParser.urlencoded({ extended: true })) //reading information from form in App.js that uses a middleware called body-parser
 
@@ -43,7 +44,7 @@ async function run() {
        const p = collection.insertOne(personDocument); //insert into database an object that contains information
     })
 
-  app.post('/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
+  app.post( '/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
     var info = req.body.search;
       db.collection('mern').find({}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
@@ -72,15 +73,19 @@ async function run() {
   })
 
   // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/App.js'))
+
+app.get('/', (req, res) => {
+  app.use(express.static('createForm'))
+  res.sendFile(path.join(__dirname + '/createForm/form.html'))
+  
 })
 
-app.listen(4001, function() //starting port for server
+
+app.listen(PORT, function() //starting port for server
 {
-  console.log('connected to localhost 4001');
+  console.log('connected to',PORT);
   
 })
 
 }
-run().catch(console.dir);; //running the function
+run().catch(console.dir);; //running the function 
