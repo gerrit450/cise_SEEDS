@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/style.css'; //importing css file
+import './styleForm/form.css'; //importing css file
 import image1 from './images/SeedLogo.png'
 import history from '../history.js';
 import { Component } from 'react';
