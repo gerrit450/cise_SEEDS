@@ -1,6 +1,7 @@
 .background-main {
   background-image: url("../images/Pattern.png");
   background-size: repeat;
+  align-self: center;
   margin: 20px;
 }
 
@@ -20,9 +21,9 @@
   color: red;
   font-family: 'Lucida Sans',
 }
-.addArticleContainer
-{
+.addArticleContainer{
   align-self: center;
+  text-align: center;
 }
 
 .addArticleHeader {
@@ -30,6 +31,7 @@ color: DodgerBlue;
   padding: 0px;
   font-family: Arial;
   text-align: center;
+  font-weight: 600;
 }
 
 .input
@@ -37,16 +39,17 @@ color: DodgerBlue;
   color: blue;
   font-family: Arial;
   font-size: large;
-  font-weight: 200;
+  font-weight: 600;
   font-style: italic;
   text-align: center;
-  white-space: pre-line;
-  width: 260;
+  white-space: nowrap;
+  width: 0;
   height: 20;
+  align-self: 'center';
 
 }
 .inputField{
-  width: 260;
+  width: 280;
    height: 20;
 }
 .container h2{
