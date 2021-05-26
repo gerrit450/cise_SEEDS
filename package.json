@@ -25,6 +25,11 @@
     "react-select": "^4.3.1",
     "web-vitals": "^1.1.1"
   },
+
+  "engines": {
+    "node": "14.x"
+  },
+  
   "scripts": {
     "start": "npm run server",
     "server": "cd src && node connect.js",
