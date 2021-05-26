@@ -21,26 +21,33 @@
     <input type="text" name="search" placeholder="Search Articles"> 
     <button type="submit" class="article">Search</button>
     <br><br>
+
     <div class="dropdown">
-        <button class="dropbtn">Select SE Practice!</button>
+        <label for="practice">Please select SE Practice:</label>
         <div class="dropdown-content">
-          <a href="#">TDD</a>
+        <select name = "practice" id = "practice"> 
+          <option value = "TDD">TDD</option>
         </div>
+      </select>
     </div>
+    <br><br /><br>
       <!--Start of dropdown buttons-->    
       <div class="dropdown">
-        <button class="dropbtn">Choose a claim!</button>
+        <label for= "claim">Please choose a claim: </label>
         <div class="dropdown-content">
-          <a href="#">Improve code quality</a>
-          <a href="#">Improve application quality</a>
-          <a href="#">Improve team confidence</a>
+        <select name ="claim" id = "claim">
+          <option value = "Improves code quality"> Improves code quality</option>
+          <option value = "Improves application quality">Improves application quality</option>
+          <option value = "Improves team confidence">Improves team confidence</option>
         </div>
+      </select>
       </div>
     </form>
   </div>
     <div class="NewArticle">
-      <input type="text" name="" id="">
-      <button type="submit" >Add new articles</button>
+      <form action="articles" method="GET">
+        <button type="submit">Add article</button>
+     </form>
     </div>
 
 </body>
