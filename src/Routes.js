@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import history from './history';
 import display from './views/display.ejs';
-import addArticle from './Form/addArticle.js';
+import addArticle from './views/addArticle.ejs';
 import app from './App.js';
 
 
