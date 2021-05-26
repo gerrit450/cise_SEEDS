@@ -30,7 +30,7 @@ async function run() {
 
   const collection = client.db('Merndata').collection('mern');
 
-  app.post('/articles', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
+  app.post('/articles/submit', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
   {
     res.send("Thank you for submitting the article!");
     console.log("parsed!"); // saving input
@@ -59,9 +59,9 @@ async function run() {
         
   })
   
-  app.get('/test', (req, res) => {
+  app.get('/articles', (req, res) => {
+    res.render('addArticle.ejs')
 
-    console.log(req.body.search);
   })
 
   app.put('/updatedata', (req, res) => 
