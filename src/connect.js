@@ -30,18 +30,21 @@ async function run() {
 
   const collection = client.db('Merndata').collection('mern');
 
-  app.post('/submit/article', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
+  app.post('/articles', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
   {
-    res.send(req.body.title);
+    res.send("Thank you for submitting the article!");
     console.log("parsed!"); // saving input
 
       let personDocument = { // an object parsed to mongodb server
         "title": req.body.title,
-        "published": new Date(req.body.date), // date YY/MM/DD                                                                                                                           
+        "published": new Date(req.body.year), // date YY/MM/DD     
+        "source": req.body.source,
+        "SE practice(s)": req.body.practice,
+        "Claim(s)": req.body.claims,                                                                                                             
         "Authors": { "FirstName": req.body.firstname, "LastName": req.body.lastname },
     }
        
-       const p = collection.insertOne(personDocument); //insert into database an object that contains information
+         collection.insertOne(personDocument); //insert into database an object that contains information
     })
 
   app.post( '/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata

@@ -1,3 +1,7 @@
+  
+<div style="background-color: lightseagreen; height: 800; ">
+            <script>
+
 
         <div id="containerResult" style="background-color: rgb(255, 255, 255); height: 200; ">
             <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -11,21 +15,52 @@
                     <th><text>year </text></th>
                 </tr>
 
+                <script>
+                    let arrTitle = new Array('<%-output.length%>');
+                    let arrAuthor = new Array('<%-output.length%>');
+                    let arrPublished = new Array('<%-output.length%>');
+                    let arrYear = new Array('<%-output.length%>');
+                    let counter = 0;
+                    let testing = '<%-output[0].title%>';
+
+                    
+                    
+                </script>
                 
-                <% for(var i = 0; i < output.length; i++) {%>
-                   
+                <% for(var i = 0; i < output.length; i++) { %>
                     <tr>
-                     <th> <span style="font-weight: bold;"><%= output[i].title %></span> <br><br> </th>
-                     <th> <span style="font-weight: bold;"><%= output[i].author%></span> </th>
-                     <th> <span style="font-weight: bold;"><%= output[i].published%></span> </th>
-                     <th> <span style="font-weight: bold;"><%= output[i].year%></span> </th>
+                     <th><text><%= output[i].title%></text> <br><br></th>
+                     <th><text><%= output[i].author%></text> </th>
+                     <th><text><%= output[i].published%></text></th>
+                     <th><text><%= output[i].year%></text> </th>
                     </tr>
                     
-                    <% } %> 
+                    <script>
+                     arrTitle[counter] = '<%-output[i].title%>';
+                     counter+=1;
+                    </script>
+                    
+                <% } %> 
+                     
                     
                     </table>
                       <br><br>
+
+
+                      <script>
+                        function sort(arr)
+                        {
+                            console.log("before sort",arr);
+                            arr.sort();
+                            console.log("after sort",arr);
+                            return arr;
+                        }
+                    </script>
+                    
+        </body>
+</div>
+        
+
                     <a href="form.html">Back to Menu</a>
                   
-            </body>
-        </div>
+        
