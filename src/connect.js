@@ -30,35 +30,42 @@ async function run() {
 
   const collection = client.db('Merndata').collection('mern');
 
-  app.post('/submit/article', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
+  app.post('/articles/submit', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
   {
-    res.send(req.body.title);
+    res.send("Thank you for submitting the article!");
     console.log("parsed!"); // saving input
 
       let personDocument = { // an object parsed to mongodb server
         "title": req.body.title,
-        "published": new Date(req.body.date), // date YY/MM/DD                                                                                                                           
-        "Authors": { "FirstName": req.body.firstname, "LastName": req.body.lastname },
+        "published": new Date(req.body.year), // date YY/MM/DD     
+        "source": req.body.source,
+        "practice": req.body.practice,
+        "claim": req.body.claim,                                                                                                             
+        "Authors": req.body.name,
     }
        
-       const p = collection.insertOne(personDocument); //insert into database an object that contains information
+         collection.insertOne(personDocument); //insert into database an object that contains information
     })
 
   app.post( '/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
-    //var info = req.body.search;
-      db.collection('mern').find({title: req.body.search}, {projection: {title: 1, year: 1}}).toArray() // then go to collection
+    const collect = db.collection('mern') // then go to collection
+    //collect.find({title: "/most/"}).toArray() 
+    collect.find( {$and: [{title:{$regex: req.body.search ,$options:"$i"}}, {claim:{$regex: req.body.claim , $options:"$i"}}]}).toArray()
         .then(data => {
           console.log(data)
+          //console.log( req.body.search," and ",req.body.claim);
+         // res.send(data)
           res.render('display.ejs', {output: data })
         })
         .catch(error => console.error(error))
         
   })
   
-  app.get('/test', (req, res) => {
+  app.get('/articles', (req, res) => {
+    app.use(express.static(path.join(__dirname, '/Form')));
+    res.render('addArticle.ejs')
 
-    console.log(req.body.search);
   })
 
   app.put('/updatedata', (req, res) => 

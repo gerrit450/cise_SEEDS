@@ -1,11 +1,13 @@
 import React from 'react';
-import './style/style.css'; //importing css file
+import './styleForm/form.css'; //importing css file
 import image1 from './images/SeedLogo.png'
+import history from '../history.js';
 import { Component } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select from 'react-select';
 import { title } from 'process';
+
 
 export default class createForm extends Component
 {
@@ -47,6 +49,8 @@ export default class createForm extends Component
     <input type="text" name="search" placeholder="Search Articles"/> 
     <button type="submit" class="article">Search</button>
   </form>
+
+
   <div style={{marginTop: 10}}>
   <Dropdown className={"sepractice"}>
   <Dropdown.Toggle variant="success" id="dropdown">
@@ -71,8 +75,9 @@ export default class createForm extends Component
   </Dropdown.Menu>
 </Dropdown>
 </div>
+
   <div class="NewArticle">
-    <button type="submit" >Add new articles</button>
+    <button type="submit" onClick={() =>history.push('/addArticle')} >Add new articles</button>
   </div>
   <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameSE} options = {optionsSE}/>
   <Select className="mt-4 col-md-6 col-offset-4" defaultValue={nameOfClaim} options = {optionsClaim}/>

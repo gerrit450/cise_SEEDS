@@ -1,14 +1,14 @@
 import {Component} from 'react';
-import run from './Form/form.js';
+import createform from './Form/form.js';
 
 class App extends Component {
 
   render()
   {
-  var r;
-  r = new run();
-  return (
-    r.create()
+    var form;
+    form = new createform();
+    return (
+    form.create()
   );
   }
 
