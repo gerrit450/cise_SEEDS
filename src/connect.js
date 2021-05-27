@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://gerrit:Hungergames221@clustermern-shard-00-00.te3ee.mongodb.net:27017,clustermern-shard-00-01.te3ee.mongodb.net:27017,clustermern-shard-00-02.te3ee.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-rukgtm-shard-0&authSource=admin&retryWrites=true&w=majority";
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-const express = require('express'); //load express dependencies. must be installed npm install express --save
+const express = require('express'); //load express dependencies. 
 const app = express(); // this creates an express application
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -14,38 +14,35 @@ app.use(express.static(path.join(__dirname, './App.js')))
 
 async function run() {
 
-  app.set('view engine', 'ejs'); // setting the view engine to use embedded javascript language to display
+  app.set('view engine', 'ejs'); // setting the view engine to use embedded 
 
-  try
-  {
+  try{
     await client.connect();
     console.log('connected!');
-    
   }
-  catch (err) 
-  {
-        console.log(err);
+  catch (err){
+    console.log(err);
   } 
 
 
   const collection = client.db('Merndata').collection('mern');
+    // if a request is sent on localhost4001/formdata, it will run this function
 
-  app.post('/articles/submit', function (req, res) // if a request is sent on localhost4001/formdata, it will run this function
+  app.post('/articles/submit', function (req, res)  
   {
     res.send("Thank you for submitting the article!");
-    console.log("parsed!"); // saving input
-
-      let personDocument = { // an object parsed to mongodb server
-        "title": req.body.title,
-        "published": new Date(req.body.year), // date YY/MM/DD     
-        "source": req.body.source,
-        "practice": req.body.practice,
-        "claim": req.body.claim,                                                                                                             
-        "Authors": req.body.name,
+    
+    let personDocument = { // an object parsed to mongodb server
+      "title": req.body.title,
+      "published": new Date(req.body.year),    
+      "source": req.body.source,
+      "practice": req.body.practice,
+      "claim": req.body.claim,                                                                                                     
+      "Authors": req.body.name,
     }
-       
-         collection.insertOne(personDocument); //insert into database an object that contains information
+        collection.insertOne(personDocument); 
     })
+
 
   app.post( '/results', (req, res) => { //reading collections from the mongodb database when on localhost4001/readdata
     const db = client.db('Merndata') // go to database
